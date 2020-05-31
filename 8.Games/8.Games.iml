@@ -8,5 +8,15 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="desktop-game-engine" level="project" />
+    <orderEntry type="module-library">
+      <library name="desktop-game-engine.jar">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="true" />
+      </library>
+    </orderEntry>
   </component>
 </module>
