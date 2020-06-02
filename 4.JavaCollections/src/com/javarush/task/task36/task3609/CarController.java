@@ -13,6 +13,14 @@ public class CarController {
         return model.getBrand();
     }
 
+    public void increaseSpeed(int seconds) {
+        model.setSpeedUp(seconds);
+    }
+
+    public void decreaseSpeed(int seconds) {
+        model.setSpeedDown(seconds);
+    }
+
     public String getCarModel() {
         return model.getModel();
     }
