@@ -1,5 +1,6 @@
 package com.javarush.task.task36.task3611;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /* 
@@ -21,6 +22,25 @@ public class Solution {
 
     public Set<Integer> getAllFriendsAndPotentialFriends(int index, int deep) {
         //напишите тут ваш код
+        // используется рекурсия, поэтому при достижении глубины 0 - возврат
+        Set<Integer> set = new HashSet<>();
+        if (deep == 0) {
+            return set;
+        }
+        //друзья
+        for (int i = 0; i < humanRelationships.length; i++) {
+            if ((i < index) && (index < humanRelationships.length) && humanRelationships[index][i]) {
+                set.add(i);
+                // друзья друга i
+                set.addAll(getAllFriendsAndPotentialFriends(i, deep-1));
+            } else if ((i > index) && humanRelationships[i][index]) {
+                set.add(i);
+                // друзья друга i
+                set.addAll(getAllFriendsAndPotentialFriends(i, deep-1));
+            }
+        }
+        set.remove(index); //сам себе и так друг :)
+        return set;
     }
 
     // Remove from the set the people with whom you already have a relationship
